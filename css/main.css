@@ -97,21 +97,131 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+   html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
 
+body {
+    font-family: serif;
+    line-height: 1.4; 
+}
 
+img {
+    max-width: 100%;
+    display: block;
+}
 
+.page-header {
+    background-color: red;
+    color: purple;
+    position: relative;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
 
+.page-header h1 {
+    font-size: 1.5em;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+}
 
+.page-header .nav-icon {
+    cursor: pointer;
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
+.main-nav {
+    display: none;
+    background-color: purple;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+}
 
+.main-nav ul {
+    margin-top: 2em;
+    list-style-type: none;
+}
 
+.main-nav li {
+    margin: 1em 0;
+    position: relative;
+}
 
+.main-nav a {
+    color: red;
+    text-decoration: none;
+}
 
+.main-nav .close-icon {
+    font-style: normal;
+    position: absolute;
+    top: 0.95rem;
+    right: 1em;
+    line-height: 1;
+    color: red;
+    cursor: pointer;
+}
 
+.main-nav li.is-active:before {
+    content: '';
+    display: block;
+    border: 0.5rem solid transparent;
+    border-left-color: red;
+    position: absolute;
+    left: -0.75em;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
+.main-content {
+    margin: 3em auto;
+    max-width: 960px;
+    padding: 1em;
+}
 
+.nav-open {
+    overflow: hidden;
+}
 
+.nav-open .main-nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid purple;
+    width: 50%;
+    min-height: 100%;
+}
 
+.nav-open .page-content {
+    border: 1px solid red;
+    transform: translateX(50%);
+}
+
+.nav-open .page-content:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 100%, 50%, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 150;
+}
 
 /* ==========================================================================
    Helper classes
